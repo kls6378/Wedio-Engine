@@ -3,8 +3,11 @@ const app = express()
 
 const port = 9562
 
+app.set('view engine','pug')
+app.set('views','views')
+
 app.get('/',(req,res)=>{
-    res.send('Hello World! Weeeeeeeeeeeeeeee')
+    res.render('index')
 })
 
 app.listen(port, ()=>{
