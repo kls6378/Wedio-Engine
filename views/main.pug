@@ -10,8 +10,17 @@ html
         div.box
             h1 Wedio Engine
             h4 겁나 쩌는 엔진 입니다;;ㄷㄷ 빨리 쓰셈..
-            input.btn.google(type="button" value="아마 구글 로그인")
-            br
-            input.btn.kakao(type="button" value="아마 카카오 로그인")
-            br
-            input.btn.naver(type="button" value="아마 네이버 로그인")
+            -if(!user)
+                form(action='/login' method='post')
+                    div
+                        label Username : 
+                        input(type='text' name='username')
+                    div
+                        label Password : 
+                        input(type='password' name='password')
+                    div
+                        input(type='submit' name='로그인')
+            -if(user)
+                h4 환영합니다 #{user.username}님       
+                div
+                    a(href='/logout') 로그아웃
