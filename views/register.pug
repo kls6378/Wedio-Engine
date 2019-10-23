@@ -1,0 +1,26 @@
+html
+    head
+        style
+            include css/register.css
+    body
+        ul.navUl
+            li.navLi.title
+                a(href='#') WedioLOGO
+
+        div.box
+            h1 회원가입
+            form(action='/register' method='post')
+                div
+                    label 아이디 : 
+                    input(type='text' name='id')
+                div
+                    label 비밀번호 : 
+                    input(type='password' name='password')
+                div
+                    label 비밀번호 재입력 : 
+                    input(type='password' name='password2')
+                div
+                    label 닉네임 : 
+                    input(type='text' name='nickname')
+                div
+                    input(type='submit' value='회원가입')

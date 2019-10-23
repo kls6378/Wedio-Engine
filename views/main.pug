@@ -13,14 +13,16 @@ html
             -if(!user)
                 form(action='/login' method='post')
                     div
-                        label Username : 
+                        label 아이디 : 
                         input(type='text' name='username')
                     div
-                        label Password : 
+                        label 비밀번호 : 
                         input(type='password' name='password')
                     div
-                        input(type='submit' name='로그인')
+                        input(type='submit' value='로그인')
+                    div
+                        a(href="register") 회원가입
             -if(user)
-                h4 환영합니다 #{user.username}님       
+                h4 환영합니다 #{user.nickname}님       
                 div
                     a(href='/logout') 로그아웃
