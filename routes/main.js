@@ -1,5 +1,8 @@
 const express = require('express')
 const passport = require('passport')
+const mysql = require('mysql')
+const dbConfig = require('../config/db_config')
+const connection = mysql.createConnection(dbConfig)
 const router = express.Router();
 
 router.get('/', (req, res) => {
